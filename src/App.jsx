@@ -1,27 +1,26 @@
-import Square from "./Square"
 import Input from "./Input"
-import { useState } from "react"
+import Square from "./Square"
+import { useState } from "React"
 
 function App() {
-  const [colorValue, setColorValue] = useState('')
+  const [colorvalue, setColorValue ] = useState('')
+  const [isDarkText, setIsDarkText ] = useState(true)
   const [hexValue, setHexValue] = useState('')
-  const [isDarkText, setDarkText] = useState(true)
   return (
-    <div className="App">
-      <Square 
-      colorValue={colorValue}
-      hexValue={hexValue}
-      isDarkText={isDarkText}
-      />
-      <Input
-      colorValue={colorValue}
-      setColorValue={setColorValue}
-      setHexValue={setHexValue}
-      isDarkText={isDarkText}
-      setDarkText={setDarkText}
-      /> 
+    <div>
+    <Input 
+    colorValue={colorvalue}
+    setColorValue={setColorValue}
+    setIsDarkText={setIsDarkText}
+    isDarkText={isDarkText}
+    setHexValue={setHexValue} /> 
+    <Square 
+    colorValue={colorvalue}
+    isDarkText={isDarkText}
+    hexValue={hexValue} />
     </div>
   )
+
 }
 
 export default App
